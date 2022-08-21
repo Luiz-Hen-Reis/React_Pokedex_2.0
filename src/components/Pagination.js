@@ -8,7 +8,7 @@ const Pagination = ({ totalPages, page, handleLeftClick, handleRightClick }) => 
     <Wrapper>
       <button onClick={handleLeftClick}><AiOutlineLeftCircle size={24} className="icon" /></button>
       <span>{page < 10 ? `0${page}` : page} of {totalPages}</span>
-      <button onClick={handleRightClick}><AiOutlineRightCircle size={24} className="icon" /></button>
+      <button  onClick={handleRightClick}><AiOutlineRightCircle size={24} className="icon" /></button>
     </Wrapper>
   );
 };

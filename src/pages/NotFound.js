@@ -20,7 +20,7 @@ const NotFound = () => {
     <Wrapper>
       <div className="container">
         <h3>Oops! The page you were looking for doesn't exist</h3>
-        <p>You may have mistyped the address or the page may have moved</p>
+        <p>You may have mistyped the address or the page may have been moved</p>
         <button type="button" className="link" onClick={handleGetBack}>
           Take me back to the home page
         </button>

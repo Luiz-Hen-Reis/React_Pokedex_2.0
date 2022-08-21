@@ -36,6 +36,7 @@ const Pokedex = () => {
   const handleLeftClick = () => {
     if (page > 0) setPage(page - 1);
   };
+
   const handleRightClick = () => {
     if (page < totalPages) setPage(page + 1);
   };
@@ -74,6 +75,7 @@ const Wrapper = styled.section`
   width: 100%;
   min-height: 100vh;
   max-height: 100%;
+
   .header-top {
     display: flex;
     flex-direction: column;

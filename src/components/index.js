@@ -5,5 +5,6 @@ import NavLinks from "./NavLinks";
 import Pagination from "./Pagination";
 import PokemonCard from "./PokemonCard";
 import PokemonInfoCard from "./PokemonInfoCard";
+import PokemonImg from "./PokemonImg";
 
-export { Logo, FormRow, NavBar, NavLinks, Pagination, PokemonCard, PokemonInfoCard };
+export { Logo, FormRow, NavBar, NavLinks, Pagination, PokemonCard, PokemonInfoCard, PokemonImg };

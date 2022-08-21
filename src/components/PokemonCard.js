@@ -8,18 +8,16 @@ const PokemonCard = ({ pokemons }) => {
   const navigate = useNavigate();
   const pokemonAnimatedImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemons.id}.gif`;
 
+  const showPokemonInfoInANewTab = () => {
+    const url = `/pokedex/${pokemons.name}`
+    window.open(url, '_blank');
+  }
+
   return (
     <Wrapper>
-      <div
-        className="card-container"
-        onClick={() => navigate(`/pokedex/${pokemons.name}`)}
-        style={{
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundImage: `${
-            backgroundBasedOnType[pokemons.types[0].type.name]
-          }`,
-        }}
+      <CardContainer
+        onClick={showPokemonInfoInANewTab}
+        background={`${backgroundBasedOnType[pokemons.types[0].type.name]}`}
       >
         <div className="img-container">
           <img src={pokemonAnimatedImage} alt={pokemons.name} />
@@ -35,7 +33,7 @@ const PokemonCard = ({ pokemons }) => {
             ))}
           </div>
         </div>
-      </div>
+      </CardContainer>
     </Wrapper>
   );
 };
@@ -49,34 +47,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 98%;
-    margin-bottom: .5rem;
-    height: 8rem;
-    transition: all ease .2s;
-
-    &:hover {
-      border: 4px solid var(--cerulean-blue);
-      border-radius: var(--border-radius);
-    }
-
-    .img-container {
-      img {
-        width: 7rem;
-        height: 7rem;
-        margin-top: -2rem;
-
-        @media screen and (min-width: 768px) {
-          width: 9rem;
-          height: 9rem;
-        }
-      }
-    }
-  }
 
   .right-side {
     flex: 1;
@@ -98,4 +68,36 @@ const Wrapper = styled.div`
       align-items: center;
     }
   }
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  margin-bottom: 0.5rem;
+  height: 8rem;
+  transition: all ease 0.2s;
+  background-image: ${(props) => props.background};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    border: 4px solid var(--cerulean-blue);
+    border-radius: var(--border-radius);
+  }
+
+  .img-container {
+      img {
+        width: 7rem;
+        height: 7rem;
+        margin-top: -2rem;
+
+        @media screen and (min-width: 768px) {
+          width: 9rem;
+          height: 9rem;
+        }
+      }
+    }
 `;
