@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
-import Loading from "../components/Loading";
 import { POKEAPI } from "../utils/axios";
-import { PokemonCard, Pagination } from "../components";
+import { PokemonCard, Pagination, Loading } from "../components";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -68,6 +66,7 @@ const Pokedex = () => {
     </Wrapper>
   );
 };
+
 export default Pokedex;
 
 // styles
